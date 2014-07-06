@@ -188,17 +188,17 @@ $(function(){
 });
 ```
 
-## 高階関数
+### 高階関数
 
 関数を引数に取る関数や、関数を返す関数。eachは関数を引数に取る。
 
 ```javascript
-$(".aaa").each(function(){
+$(".list").each(function(){
 
 });
 ```
 
-## クロージャ
+### クロージャ
 
 クロージャは、外側の変数を保持して、関数を返す高階関数。
 
@@ -215,6 +215,16 @@ $(".aaa").each(function(){
 ```
 
 こんな感じにする。
+
+```javascript
+    var count = 0;
+    $("#counter").on("click",function(){
+      count++;
+      alert(count);
+    });
+```
+
+もうちょっと推し進めるとこんな感じ。関数を返す関数を定義する。
 
 ```javascript
     var counter = function(){
