@@ -1,6 +1,6 @@
 # JavaScriptの関数
 
-JavaScriptを書いていく上で、とても重要な「関数」。
+JavaScriptを書いていく上で、とても重要な関数。
 
 JavaScriptを書けば関数を使うことになるけど、jQueryを使ってちょっとした動くものを作るくらいだと、関数を意識することは少ないかもしれない。
 
@@ -8,12 +8,10 @@ JavaScriptを書けば関数を使うことになるけど、jQueryを使って�
 
 関数と仲良くなると、普段書いているコードの意味や動作がわかるようになって、JavaScriptの読み書きがずっと楽になると思う。
 
-MDNのドキュメントや、Effective JavaScriptを読めば、本文書より正確で詳しいことが書いてある。
+MDNのドキュメントや、Effective JavaScriptを読めば、本文書より正確で詳しいことが書いてある。本文書によって、これらのドキュメントや書籍を読むきっかけになればいいな、と。
 
 * <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript" target="_blank">JavaScript | MDN</a>
 * <a href="http://www.amazon.co.jp/dp/4798131113" target="_blank">Effective JavaScript JavaScriptを使うときに知っておきたい68の冴えたやり方</a>
-
-本文書によって、これらのドキュメントや書籍を読むきっかけになればいいな、と。
 
 本文書では、ECMAScript 5.1をベースに記載する。
 
@@ -47,7 +45,7 @@ doSomethingという変数に、関数を格納している。この書き方、
 
 ## 関数の作り方
 
-関数宣言(function文)で作る。
+関数宣言(function文)で作る。function statement.
 
 ```javascript
 function doSomething(){
@@ -55,7 +53,7 @@ function doSomething(){
 }
 ```
 
-関数式(function 演算子)で作る
+関数式(function 演算子)で作る。function operator.
 
 ```javascript
 var doSomething = function(){
@@ -262,9 +260,146 @@ $(".list").each(function(){
     }
 ```
 
+## ひよコード撲滅
+
+> 美しくないコードをuncodeとかクソースなどと呼ぶ人もいるようですが、これらの言葉は開発者を傷つけるので、最近アプレッソでは、あまり美しくないコードを「ひよコード」、美しくない箇所は「ここがピヨピヨしてる」と表現するようにしています。未熟だけど伸び代はあることを意味しています。
+> 
+> * <a href="http://blog.livedoor.jp/lalha/archives/50495777.html" target="_blank">小野和俊のブログ:コードレビューについて</a>
+
+### グローバルスコープに関数定義
+
+どうしてこうなったのかわからないけど、グローバルスコープに関数定義しているコードをたまに見かける。
+
+```javascript
+$(function(){
+  doSomething();
+  doSomthing2();
+});
+
+function doSomething(){
+  // doSomething
+}
+
+var doSomthing2 = function(){
+  // doSomething  
+};
+```
+
+var付いてるけど、グローバルで宣言しちゃだめ。functionもグローバルで宣言しちゃだめ。こうする。
+
+```javascript
+$(function(){
+  function doSomething(){
+    // doSomething
+  }
+
+  var doSomthing2 = function(){
+    // doSomething
+  };
+
+  doSomething();
+  doSomthing2();
+});
+```
+
+たぶん、スコープについてちゃんと理解できていないんだと思う。
+
+グローバルスコープに関数定義しても、かぶることなんてそんなにないでしょう、って思うかもしれないけど、これの問題点わかる？
+
+```javascript
+$(function(){
+  // ...
+  open();
+  // ...
+});
+
+function open(){
+  // open something
+}
+```
+
+window.open()を潰してる。
+
+* <a href="https://developer.mozilla.org/ja/docs/Web/API/window.open" target="_blank">window.open - Web API インターフェイス | MDN</a>
+
+### 関数の使い方がピヨピヨ
+
+冗長な感じがしちゃう。
+
+```javascript
+$(function(){
+  var doSomething = function(){
+    // doSomething
+  }
+
+  $("#input-name").on("keyup", function(){
+    doSomething();
+  });
 
 
+  $("#input-address").on("keyup", function(){
+    doSomething();
+  });
 
+});
+```
 
+onの第二引数(この場合)は、関数を取る。これはうまくいかない。doSomething()がすぐに実行されてしまう。
+
+```javascript
+  $("#input-area").on("keyup", doSomething());
+```
+
+```doSomething```という関数を渡す。
+
+```javascript
+  $("#input-name").on("keyup", doSomething);
+```
+
+さらにjQueryのonは、こんなふうに書ける。
+
+```javascript
+$(function(){
+  var doSomething = function(){
+    // doSomething
+  }
+
+  $("#input-area, #submit-button").on("keyup", doSomething);
+});
+```
+
+()は、実行してくれる。こんな関数が定義されていた場合
+
+```javascript
+  var doSomething = function(){
+    // doSomething
+  }
+```
+
+```doSomething```は関数のオブジェクト、```doSomething()```は関数を実行する。
+
+だから、こんなコードはページが表示されたときに、alertが出る。
+
+```javascript
+$(function(){
+  var doSomething = function(){
+    alert("doSomething");
+  };
+
+  $("#button").on("click", doSomething());
+});
+```
+
+こうやって関数を渡すと、クリックされたときにalertが表示される。
+
+```javascript
+$(function(){
+  var doSomething = function(){
+    alert("doSomething");
+  };
+
+  $("#button").on("click", doSomething);
+});
+```
 
 
