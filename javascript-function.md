@@ -368,7 +368,7 @@ $(function(){
 });
 ```
 
-()は、実行してくれる。こんな関数が定義されていた場合
+()は、関数を実行してくれる。
 
 ```javascript
   var doSomething = function(){
@@ -376,7 +376,7 @@ $(function(){
   }
 ```
 
-```doSomething```は関数のオブジェクト、```doSomething()```は関数を実行する。
+こんな関数が定義されていた場合```doSomething```は関数のオブジェクト、```doSomething()```は関数を実行する。
 
 だから、こんなコードはページが表示されたときに、alertが出る。
 
