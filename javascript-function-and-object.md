@@ -11,7 +11,7 @@ JavaScriptを書けば関数やオブジェクトを使うことになるけど�
 MDNのドキュメントや、Effective JavaScriptを読めば、本文書より正確で詳しいことが書いてある。
 
 * <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript" target="_blank">JavaScript | MDN</a>
-* <a href="http://www.amazon.co.jp/dp/4798131113" target="_blank">Amazon.co.jp： Effective JavaScript JavaScriptを使うときに知っておきたい68の冴えたやり方: David Herman, 吉川 邦夫: 本</a>
+* <a href="http://www.amazon.co.jp/dp/4798131113" target="_blank">Effective JavaScript JavaScriptを使うときに知っておきたい68の冴えたやり方</a>
 
 本文書によって、これらのドキュメントや書籍を読むきっかけになればいいな、と。
 
