@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script>
+	$(function(){
+
+    var list = $("#button-container > button");
+    for(var i = 0; i < list.length; i++){
+      list.eq(i).on("click", function(){
+        alert(i);
+      });
+    }
+
+  });
+	</script>
+</head>
+<body>
+  <div id="button-container">
+    <button>1</button> 
+    <button>2</button> 
+    <button>3</button> 
+  </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>
+   $(function(){
+    $("#counter").on("click",function(){
+      var count = 0;
+      count++;
+      alert(count);
+    });
+  });
+</script>
+</head>
+<body>
+  <button id="counter">count</button>	
+</body>
+</html>
