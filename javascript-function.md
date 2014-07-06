@@ -350,7 +350,7 @@ onの第二引数(この場合)は、関数を取る。これはうまくいか�
   $("#input-area").on("keyup", doSomething());
 ```
 
-```doSomething```という関数を渡す。
+そんなときは```doSomething```という関数を渡す。
 
 ```javascript
   $("#input-name").on("keyup", doSomething);
