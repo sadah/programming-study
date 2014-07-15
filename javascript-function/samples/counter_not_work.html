@@ -15,6 +15,15 @@
 </script>
 </head>
 <body>
-  <button id="counter">count(not work)</button>	
+  <button id="counter">count(not work)</button>
+  <pre>
+   $(function(){
+    $("#counter").on("click",function(){
+      var count = 0;
+      count++;
+      alert(count);
+    });
+  });
+  </pre>
 </body>
 </html>

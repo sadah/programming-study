@@ -246,6 +246,8 @@ $(".list").each(function(){
 
 カウンタのサンプルがよくある。これはだめな例。
 
+* <a href="https://sadah.github.io/programming-study/javascript-function/samples/counter_not_work.html" target="_blank">counter not work</a>
+
 ```javascript
 $("#counter").on("click",function(){
   var count = 0;
@@ -257,6 +259,8 @@ $("#counter").on("click",function(){
 ---
 
 こんな感じにする。
+
+* <a href="https://sadah.github.io/programming-study/javascript-function/samples/counter.html" target="_blank">counter</a>
 
 ```javascript
 var count = 0;
@@ -285,6 +289,9 @@ $("#counter").on("click",counter());
 
 これもだめな例。
 
+* * <a href="https://sadah.github.io/programming-study/javascript-function/samples/list_not_work.html" target="_blank">list not work</a>
+
+
 ```javascript
 var list = $("#button-container > button");
 for(var i = 0; i < list.length; i++){
@@ -297,6 +304,8 @@ for(var i = 0; i < list.length; i++){
 ---
 
 こんな感じにする。
+
+* <a href="https://sadah.github.io/programming-study/javascript-function/samples/list.html" target="_blank">list</a>
 
 ```javascript
 var list = $("#button-container > button");
