@@ -12,10 +12,11 @@ JavaScriptを書けば須らく関数を使うことになるけど(たぶん)�
 
 ---
 
-MDNのドキュメントや、Effective JavaScriptを読めば、本文書より正確で詳しいことが書いてある。本文書によって、これらのドキュメントや書籍を読むきっかけになればいいな、と。
+MDNのドキュメントや、Effective JavaScriptを読めば、本文書より正確で詳しいことが書いてある。
+本文書によって、これらのドキュメントや書籍を読むきっかけになればいいな、と。
 
 * <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript" target="_blank">JavaScript | MDN</a>
-* <a href="http://www.amazon.co.jp/dp/4798131113" target="_blank">Effective JavaScript JavaScriptを使うときに知っておきたい68の冴えたやり方</a>
+* <a href="http://www.amazon.co.jp/dp/4798131113" target="_blank">Effective JavaScript</a>
 
 本文書では、ECMAScript 5.1をベースに記載する。
 
@@ -26,7 +27,7 @@ MDNのドキュメントや、Effective JavaScriptを読めば、本文書より
 JavaScriptの関数は第一級オブジェクト(first-class object)。
 
 > JavaScript において、関数は第一級オブジェクトです。すなわち、関数はオブジェクトであり、他のあらゆるオブジェクトと同じように操作したり渡したりする事ができます。具体的には、関数は Function オブジェクトです。
-> 
+>
 > <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions_and_function_scope" target="_blank">関数と関数スコープ - JavaScript | MDN</a>
 
 ---
@@ -217,7 +218,7 @@ $()は関数を引数に取る。無名関数を引数に渡している。
 
 ```javascript
 $(function(){
-  // lambda  
+  // lambda
 });
 ```
 
@@ -314,7 +315,7 @@ for(var i = 0; i < list.length; i++){
 ## ひよコードを撲滅する
 
 > 美しくないコードをuncodeとかクソースなどと呼ぶ人もいるようですが、これらの言葉は開発者を傷つけるので、最近アプレッソでは、あまり美しくないコードを「ひよコード」、美しくない箇所は「ここがピヨピヨしてる」と表現するようにしています。未熟だけど伸び代はあることを意味しています。
-> 
+>
 > * <a href="http://blog.livedoor.jp/lalha/archives/50495777.html" target="_blank">小野和俊のブログ:コードレビューについて</a>
 
 ---

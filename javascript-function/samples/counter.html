@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>counter</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script>
   $(function(){
@@ -18,10 +18,24 @@
     $("#counter").on("click",counter());
 
   });
-
   </script>
 </head>
 <body>
-  <button id="counter">count</button> 
+  <button id="counter">count</button>
+  <pre>
+  $(function(){
+
+    var counter = function(){
+      var count = 0;
+      return function(){
+        count++;
+        alert(count);
+      };
+    };
+
+    $("#counter").on("click",counter());
+
+  });
+  </pre>
 </body>
 </html>
