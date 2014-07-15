@@ -289,7 +289,7 @@ $("#counter").on("click",counter());
 
 これもだめな例。
 
-* * <a href="https://sadah.github.io/programming-study/javascript-function/samples/list_not_work.html" target="_blank">list not work</a>
+* <a href="https://sadah.github.io/programming-study/javascript-function/samples/list_not_work.html" target="_blank">list not work</a>
 
 
 ```javascript
