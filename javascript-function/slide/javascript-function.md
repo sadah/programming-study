@@ -172,7 +172,7 @@ JavaScriptのスコープは関数スコープ。JavaScriptにブロックスコ
 
 ```javascript
 function f(){
-    for(var i = 0; i < 10; i++;){
+  for(var i = 0; i < 10; i++;){
     var x = i * i;
     console.log(x);
   }
